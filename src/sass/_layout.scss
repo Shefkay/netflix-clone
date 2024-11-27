@@ -1,0 +1,178 @@
+@use 'variables';
+@use 'mixins';
+
+.header {
+  width: 80%;
+  margin: 0 auto;
+  @include mixins.flex-center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  .logo {
+    width: 180px;
+  }
+
+  .sign-in-btn {
+    @include mixins.button-style(variables.$primary-color);
+    padding: 10px 0px;
+    width: 80px;
+  }
+}
+
+.hero {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(/public/images/netflix-background.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  text-align: center;
+  height: 100vh;
+  @include mixins.flex-center;
+  margin-bottom: calc(variables.$margin + 10px);
+
+  .hero-content {
+    max-width: 600px;
+    margin: auto;
+
+    h1 {
+      font-size: calc(variables.$font-size * 4 - 12px);
+      font-weight: 900;
+      margin-bottom: variables.$margin;
+    }
+
+    h5 {
+      font-size: calc(variables.$font-size + 5px);
+      margin-bottom: calc(variables.$margin * 2 + 15px);
+    }
+
+    p {
+      font-size: calc(variables.$font-size );
+    }
+
+    .email-join {
+      margin-top: 20px;
+      display: flex;
+
+      input {
+        flex: 1;
+        padding: 20px;
+        border: 1px solid variables.$card-bg;
+        border-radius: 5px;
+        background-color: rgba(128, 128, 128, 0.1);
+
+        &::placeholder {
+          color: variables.$text-color;
+          opacity: .7;
+        }
+      }
+
+      .join-now {
+        @include mixins.button-style(variables.$primary-color);
+        font-size: calc(variables.$font-size + 6px);
+        margin-left: calc(variables.$margin - 5px);
+        @include mixins.flex-center;
+      }
+    }
+  }
+
+  .curve {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(33, 13, 22, 1)16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1)84%);
+    height: 10%;
+    border-radius: 100% 100% 0 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      border: solid .25rem transparent;
+      border-top-left-radius: 100% 100%;
+      border-top-right-radius: 100% 100%;
+      border-bottom: none;
+      background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4)80%, rgba(0, 0, 0, 0.1)100%), black;
+      height: 100%;
+    }
+  }
+}
+
+.trending {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  .treading-slid-container {
+    position: relative;
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(54, 54, 54, 0.5);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 40px 15px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .scroll-btn.left {
+      left: -15px;
+    }
+
+    .scroll-btn.right {
+      right: -15px;
+    }
+  }
+
+  .trending-slider {
+    img {
+      border-radius: 10px;
+    }
+  }
+}
+
+.reasons {
+  width: 80%;
+  margin: 0 auto;
+
+  .reason-card {
+    position: relative;
+
+    .icons {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+
+      i {
+        font-size: 3rem;
+        color: rgb(138, 50, 89);
+      }
+    }
+  }
+
+  h2 {
+    font-size: calc(variables.$font-size + 10px);
+    margin-bottom: calc(variables.$margin + 5px);
+  }
+
+  p {
+    font-size: calc(variables.$font-size);
+    color: #ffffff94;
+    line-height: 26px;
+  }
+}
+
+.faq {
+  width: 80%;
+  margin: auto;
+}

@@ -1,0 +1,36 @@
+// Import partials
+@use 'variables';
+@use 'mixins';
+@use 'base';
+@use 'layout';
+@use 'components';
+
+// @use './_variables';
+// @use './_mixins';
+// @use './_rest';
+
+// .nav_bar {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 90%;
+//   margin: 0 auto;
+//   padding-top: calc(variables.$padding + 20px);
+
+//   .netflix_logo_container {
+//     p {
+//       font-size: calc(variables.$font-size * 2);
+//       color: variables.$secondary;
+//     }
+//   }
+
+//   .sign-in-btn {
+//     @include mixins.sign-in-btn;
+//     padding: calc(variables.$padding - 5px) calc(variables.$padding + 5px);
+//     border-radius: calc(variables.$border-radius);
+
+//     &:hover {
+//       background-color: variables.$off-white;
+//       color: variables.$primary;
+//     }
+//   }
+// }
