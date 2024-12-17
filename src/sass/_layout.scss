@@ -107,7 +107,27 @@
 .trending {
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: calc(variables.$margin * 6);
+
+  h2 {
+    font-size: calc(variables.$font-size + 5px);
+    margin-bottom: calc(variables.$margin + 5px);
+  }
+
+  .location-categories {
+    margin-bottom: calc(variables.$margin + 5px);
+
+    select {
+      padding: 8px variables.$padding;
+      background-color: variables.$background-color;
+      border: 1px solid variables.$card-bg;
+      color: variables.$text-color;
+
+      &:nth-child(2) {
+        margin-left: 20px;
+      }
+    }
+  }
 
   .treading-slid-container {
     position: relative;
@@ -137,6 +157,8 @@
   .trending-slider {
     img {
       border-radius: 10px;
+      height: 300px;
+      transition: transform ease-in-out .5s;
     }
   }
 }
@@ -144,6 +166,7 @@
 .reasons {
   width: 80%;
   margin: 0 auto;
+  margin-bottom: calc(variables.$margin * 6);
 
   .reason-card {
     position: relative;
@@ -173,6 +196,15 @@
 }
 
 .faq {
+  width: 60%;
+  margin-left: 10%;
+
+  .faq-content {
+    max-width: 600px;
+  }
+}
+
+.footer {
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
 }

@@ -15,15 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// fag
-document.querySelectorAll('.faq-item h3').forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('active');
-    const answer = item.nextElementSibling;
 
-    if (answer) {
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-    }
+// FAQ
+const faqs = document.querySelectorAll(".faq_item")
+
+faqs.forEach((faq_item) => {
+  faq_item.addEventListener("click", () => {
+    faq_item.classList.toggle("active");
   });
 });
 

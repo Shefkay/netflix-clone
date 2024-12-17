@@ -141,7 +141,23 @@ a {
 .trending {
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 4.5rem;
+}
+.trending h2 {
+  font-size: calc(1rem + 5px);
+  margin-bottom: calc(0.75rem + 5px);
+}
+.trending .location-categories {
+  margin-bottom: calc(0.75rem + 5px);
+}
+.trending .location-categories select {
+  padding: 8px 0.75rem;
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.trending .location-categories select:nth-child(2) {
+  margin-left: 20px;
 }
 .trending .treading-slid-container {
   position: relative;
@@ -166,11 +182,14 @@ a {
 }
 .trending .trending-slider img {
   border-radius: 10px;
+  height: 300px;
+  transition: transform ease-in-out 0.5s;
 }
 
 .reasons {
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 4.5rem;
 }
 .reasons .reason-card {
   position: relative;
@@ -195,8 +214,16 @@ a {
 }
 
 .faq {
+  width: 60%;
+  margin-left: 10%;
+}
+.faq .faq-content {
+  max-width: 600px;
+}
+
+.footer {
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .trending-slider {
@@ -210,6 +237,7 @@ a {
   margin: 0 auto;
 }
 .trending-slider .card {
+  position: relative;
   background-color: rgba(255, 255, 255, 0.1);
   width: 190px;
   height: 300px;
@@ -220,11 +248,22 @@ a {
   font-size: 24px;
   border-radius: 10px;
   flex: 0 0 auto;
-  transition: transform ease-in-out 0.5s;
+  margin-right: 1.5rem;
+  object-fit: cover;
 }
-.trending-slider .card:hover {
+.trending-slider .card:hover img {
   border-radius: 10px;
-  transform: scaleY(1.5);
+  transform: scale(1.5);
+}
+.trending-slider .card span {
+  position: absolute;
+  color: #000;
+  color: white;
+  outline-color: #fff;
+  outline-width: 10px;
+  font-size: 6rem;
+  bottom: 0;
+  left: -30px;
 }
 
 .reason-cards {
@@ -240,18 +279,44 @@ a {
   background: linear-gradient(to bottom right, rgb(26, 33, 69) 5%, rgb(33, 14, 23) 90%);
 }
 
-.faq-item {
+.faq_item {
   margin: 0.75rem 0;
   cursor: pointer;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  position: relative;
 }
-.faq-item h3 {
-  padding: 0.75rem;
-  margin: 0;
+.faq_item h3 {
+  font-size: calc(1rem + 5px);
+  font-weight: normal;
+  margin-bottom: 0.75rem;
+}
+.faq_item .answers {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.14s ease;
+}
+.faq_item.active .answers {
+  max-height: 400px;
+  animation: fade 1s ease-in-out;
+}
+.faq_item p {
+  font-size: 1rem;
+  line-height: 25px;
+  margin-bottom: 0.75rem;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .footer {
-  text-align: center;
   padding: 0.75rem;
 }
 .footer ul {

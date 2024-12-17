@@ -12,6 +12,7 @@
   margin: 0 auto;
 
   .card {
+    position: relative;
     background-color: variables.$card-bg;
     width: 190px;
     height: 300px;
@@ -20,11 +21,25 @@
     font-size: 24px;
     border-radius: 10px;
     flex: 0 0 auto;
-    transition: transform ease-in-out .5s;
+    margin-right: 1.5rem;
+    object-fit: cover;
 
-    &:hover {
+
+    &:hover img {
       border-radius: 10px;
-      transform: scaleY(1.5);
+      transform: scale(1.5);
+
+    }
+
+    span {
+      position: absolute;
+      color: variables.$background-color;
+      color: white;
+      outline-color: variables.$text-color;
+      outline-width: 10px;
+      font-size: calc(variables.$font-size * 6);
+      bottom: 0;
+      left: -30px;
     }
   }
 }
@@ -43,19 +58,52 @@
   }
 }
 
-.faq-item {
+.faq_item {
   margin: variables.$padding 0;
   cursor: pointer;
-  border-bottom: 1px solid variables.$card-bg;
+  background-color: variables.$card-bg;
+  padding: calc(variables.$padding * 2);
+  position: relative;
 
   h3 {
-    padding: variables.$padding;
-    margin: 0;
+    font-size: calc(variables.$font-size + 5px);
+    font-weight: normal;
+    margin-bottom: variables.$margin;
+  }
+
+  .answers {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .14s ease;
+  }
+
+  &.active .answers {
+    max-height: 400px;
+    // @include mixins.anime;
+    animation: fade 1s ease-in-out;
+  }
+
+  p {
+    font-size: variables.$font-size;
+    line-height: 25px;
+    margin-bottom: variables.$margin;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(-px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 }
 
 .footer {
-  text-align: center;
+  // text-align: center;
   padding: variables.$padding;
 
   ul {
